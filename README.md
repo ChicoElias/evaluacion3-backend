@@ -62,8 +62,8 @@ Copy code
 ## ▶️ Cómo Ejecutar el Proyecto
 
 ### **1. Clonar el repositorio**
-```bash
-git clone https://github.com/tu-repo/backend-nexushub.git
+bash
+git clone https://github.com/ChicoElias/evaluacion3-backend.git
 2. Ejecutar con Maven
 bash
 Copy code
@@ -101,7 +101,9 @@ Copy code
 
 # ✅ **ARCHIVO 2 — README.txt (Backend – Texto Plano)**
 
-```txt
+---
+
+
 NEXUSHUB BACKEND – API MARKET MANAGER
 Microservicio Java Spring Boot + H2
 
@@ -135,4 +137,4 @@ Notas:
 - El backend no es requerido para el funcionamiento principal de la app Android.
 
 Autores:
-Elias Delgado y Matias Diaz – Duoc UC
+Elias Delgado y Matias Diaz 
