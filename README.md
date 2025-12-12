@@ -1,4 +1,4 @@
-# 🌐 NexusHub Backend — API Market Manager  
+# 🌐 Backend — API Market Manager  
 Microservicio Java Spring Boot con base de datos H2 en memoria, diseñado para complementar la aplicación móvil **API Market Manager (NexusHub Enterprise)**.
 
 <p align="center">
