@@ -1,140 +1,64 @@
-# 🌐 Backend — API Market Manager  
-Microservicio Java Spring Boot con base de datos H2 en memoria, diseñado para complementar la aplicación móvil **API Market Manager (NexusHub Enterprise)**.
+# Evaluacion3 Backend
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Java-ED8B00?logo=openjdk&logoColor=white" />
-  <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?logo=springboot&logoColor=white" />
-  <img src="https://img.shields.io/badge/H2_Database-001A6E?logo=databricks&logoColor=white" />
-  <img src="https://img.shields.io/badge/REST_API-02569B?logo=apachespark&logoColor=white" />
-</p>
+Evaluacion3 Backend is a small Spring Boot sales service created to support an Android application with basic REST endpoints for sales registration and payment state updates. I keep it as a cleaned-up academic backend example that shows incremental progress toward more structured service development.
 
----
+## What The Service Does
 
-## 📌 Descripción  
-Este repositorio contiene el **microservicio backend** del proyecto *API Market Manager*.  
-Su propósito principal es cumplir el requerimiento académico de exponer servicios propios y demostrar arquitectura híbrida junto al frontend Android (Firebase + Spring Boot).
+- list all sales records
+- create new sales
+- delete sales by id
+- mark a sale as paid
+- run locally with an H2 in-memory database
 
-El backend funciona de manera **independiente**, **stateless** y con **H2 en memoria**, por lo que se ejecuta sin configuraciones adicionales.
+## Tech Stack
 
----
-
-## ✨ Características Principales
-
-- ⚙️ **REST API** para entidades del proyecto (ventas, clientes, productos).  
-- 🗄️ **Base de datos H2 en memoria** (modo académico, sin instalación extra).  
-- 🚀 **Spring Boot 3.x** (estructura moderna y ligera).  
-- 🔁 **Endpoints JSON listos para ser consumidos** desde cualquier cliente.  
-- 🧪 **Colección de pruebas con Postman (opcional)**.  
-- 🧱 **Arquitectura modular**: Controller → Service → Repository.
-
----
-
-## 🏗️ Tecnologías Utilizadas
-
-| Componente | Tecnología |
-|-----------|------------|
-| Lenguaje | Java 17 |
-| Framework | Spring Boot 3.x |
-| Base de Datos | H2 (In-Memory) |
-| Build Tool | Maven |
-| API Layer | Spring Web (REST) |
-
----
-
-## 📂 Estructura del Proyecto
-
-/src
-/main
-/java
-/com.nexushub.backend
-/controller
-/service
-/repository
-/model
-/resources
-application.properties
-
-yaml
-Copy code
-
----
-
-## ▶️ Cómo Ejecutar el Proyecto
-
-### **1. Clonar el repositorio**
-bash
-git clone https://github.com/ChicoElias/evaluacion3-backend.git
-2. Ejecutar con Maven
-bash
-Copy code
-mvn spring-boot:run
-3. Acceder a la aplicación
-API Base URL: http://localhost:8080
-
-Consola H2: http://localhost:8080/h2-console
-
-Credenciales H2 por defecto
-
-yaml
-Copy code
-JDBC URL: jdbc:h2:mem:testdb
-Usuario: sa
-Clave: (vacío)
-🧪 Endpoints de Ejemplo
-bash
-Copy code
-GET    /api/clientes
-POST   /api/clientes
-GET    /api/ventas
-POST   /api/ventas
-DELETE /api/ventas/{id}
-Nota: La app Android utiliza Firebase como fuente principal.
-Este backend es complementario y se incluye como parte del enfoque híbrido exigido.
-
-📜 Licencia
-Proyecto académico — Duoc UC 2025.
-
-yaml
-Copy code
-
----
-
-# ✅ **ARCHIVO 2 — README.txt (Backend – Texto Plano)**
-
----
-
-
-NEXUSHUB BACKEND – API MARKET MANAGER
-Microservicio Java Spring Boot + H2
-
-Descripción:
-Este backend corresponde al microservicio utilizado como complemento académico para el proyecto "API Market Manager". Expone endpoints REST y utiliza una base de datos H2 en memoria. No requiere instalación ni configuración adicional.
-
-Tecnologías:
 - Java 17
-- Spring Boot 3.x
-- H2 In-Memory Database
+- Spring Boot 3.3
+- Spring Web
+- Spring Data JPA
+- H2 Database
 - Maven
 
-Estructura:
-Controller / Service / Repository / Model
-Archivo de configuración: src/main/resources/application.properties
+## API Endpoints
 
-Cómo ejecutar:
-1. Abrir una terminal en la carpeta del proyecto.
-2. Ejecutar: mvn spring-boot:run
-3. API disponible en http://localhost:8080
-4. Consola H2 disponible en http://localhost:8080/h2-console
+Base URL: `http://localhost:8081`
 
-Credenciales H2:
-URL: jdbc:h2:mem:testdb
-Usuario: sa
-Clave: (vacía)
+- `GET /api/ventas`
+- `POST /api/ventas`
+- `DELETE /api/ventas/{id}`
+- `PUT /api/ventas/{id}/pagar`
 
-Notas:
-- El backend se incluye como evidencia técnica de microservicios propios.
-- La aplicación móvil funciona con enfoque "Firebase First".
-- El backend no es requerido para el funcionamiento principal de la app Android.
+## Local Run
 
-Autores:
-Elias Delgado y Matias Diaz 
+Prerequisites:
+
+- Java 17+
+- Maven 3.8+
+
+Commands:
+
+```bash
+mvn clean test
+mvn spring-boot:run
+```
+
+Useful URLs:
+
+- API base URL: `http://localhost:8081`
+- H2 Console: `http://localhost:8081/h2-console`
+
+## Portfolio Context
+
+This is a simpler project than my more mature backend repositories, but it still shows a useful part of my learning path: taking an academic requirement and shaping it into a repository that is cleaner, easier to understand, and more presentable for recruiters.
+
+## Future Improvements
+
+- request validation
+- DTOs instead of returning entities directly
+- exception handling
+- automated tests
+- Docker support
+
+## License
+
+This project is licensed under the MIT License.
